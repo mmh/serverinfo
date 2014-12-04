@@ -1,0 +1,205 @@
+body {
+  font-size: 80%;
+  font-family: sans-serif;
+  padding: 1em;
+}
+
+h1,h2,h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 120%;
+  margin: 1em 0 0.5em 0;
+}
+
+h2 {
+  font-size: 110%;
+}
+
+h3 {
+  font-size: 100%;
+}
+/*
+table {
+  width: 100%;
+}
+
+th {
+  font-weight: bold;
+  background-image: url('../images/bg.gif');
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+  background-color: #e6EEEE;
+  border: 1px solid #FFF;
+  padding: 4px;
+}
+*/
+
+.xenu {
+  background-image: url('../images/right.gif');
+  background-repeat: no-repeat;
+  background-position: 7px 8px;
+  padding-left: 20px !important;
+}
+
+/* http://dl.dropbox.com/u/642364/blogger/scripts/jq-highlight-ts.html */
+.highlight{
+  color:white !important;
+  background-color:grey !important;
+  cursor: pointer !important;
+}
+
+table.tablesorter th.name {
+  width: 12em;
+}
+
+table.tablesorter th.intip {
+  width: 10em;
+}
+
+table.tablesorter th.extip {
+  width: 10em;
+}
+
+table.tablesorter th.memory {
+  width: 6em;
+}
+
+table.tablesorter th.type {
+  width: 4em;
+}
+
+table.tablesorter th.cpucount {
+  width: 7em;
+}
+
+table.tablesorter th.cputype {
+  width: 22em;
+}
+
+table.tablesorter th.uptime {
+  width: 7em;
+}
+
+table.tablesorter th.osrelease {
+  width: 9em;
+}
+
+table.tablesorter th.kernel {
+  width: 13em;
+}
+
+table.tablesorter th.arch {
+  width: 6em;
+}
+
+table.tablesorter th.kernelarch {
+  width: 10em;
+}
+
+table.tablesorter th.parent {
+  width: 10em;
+}
+
+
+/* tablesorter from jquery tablesorter blue theme */
+table.tablesorter {
+  font-family:arial;
+  background-color: #CDCDCD;
+  margin:10px 0pt 15px;
+  font-size: 8pt;
+  width: 100%;
+  text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+  background-color: #e6EEEE;
+  border: 1px solid #FFF;
+  font-size: 8pt;
+  padding: 4px;
+}
+table.tablesorter thead tr .header {
+  background-image: url('../images/bg.gif');
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+}
+table.tablesorter tbody td {
+  color: #3D3D3D;
+  padding: 4px;
+  background-color: #FFF;
+  vertical-align: top;
+  line-height: 1.2em;
+}
+table.tablesorter tbody tr.odd td {
+  background-color:#E6E6EC;
+}
+table.tablesorter thead tr .headerSortUp {
+  background-image: url('../images/asc.gif');
+}
+table.tablesorter thead tr .headerSortDown {
+  background-image: url('../images/desc.gif');
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+
+
+
+/* filter row */
+.tablesorter-filter-row td {
+  background: #eee;
+  line-height: normal;
+  text-align: center; /* center the input */
+  -webkit-transition: line-height 0.1s ease;
+  -moz-transition: line-height 0.1s ease;
+  -o-transition: line-height 0.1s ease;
+  transition: line-height 0.1s ease;
+}
+/* optional disabled input styling */
+.tablesorter-filter-row .disabled {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: not-allowed;
+}
+
+/* hidden filter row */
+.tablesorter-filter-row.hideme td {
+  /*** *********************************************** ***/
+  /*** change this padding to modify the thickness     ***/
+  /*** of the closed filter row (height = padding x 2) ***/
+  padding: 2px;
+  /*** *********************************************** ***/
+  margin: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+.tablesorter-filter-row.hideme .tablesorter-filter {
+  height: 1px;
+  min-height: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  /* don't use visibility: hidden because it disables tabbing */
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* filters */
+.tablesorter-filter {
+  width: 95%;
+  height: inherit;
+  margin: 4px;
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  color: #333;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: height 0.1s ease;
+  -moz-transition: height 0.1s ease;
+  -o-transition: height 0.1s ease;
+  transition: height 0.1s ease;
+}
+

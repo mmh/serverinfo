@@ -1,0 +1,33 @@
+
+{% block content_header '' %}
+
+{% block content %}
+    {% for server in servers %}
+    <tr>
+    <td class="xenu">{{ server.hostname }}</td>
+    <td>{{ server.intip }}</td>
+    <td>{{ server.extip }}</td>
+    <td>{{ server.memory }}</td>
+    <td>{{ server.isvirtual }}</td>
+    <td>{{ server.cpucount }}</td>
+    <td>{{ server.cpuinfo }}</td>
+    <td>{{ (server.uptime / 60 / 60 / 24) | number_format(1) }} days</td>
+    <td>{{ server.os }}</td>
+    <td>{{ server.osrelease }}</td>
+    <td>{{ server.kernelrelease }}</td>
+    <td>{{ server.arch }}</td>
+    <td>{{ server.kernelarch }}</td>
+    {% if server.parent is empty %}
+    <td>{{ server.isvirtual }}</td>
+    {% else %}
+    <td>{{ server.parent }}</td>
+    {% endif %}
+    {% if server.dom0freemem is empty %}
+    <td>Not set</td>
+    {% else %}
+    <td>{{ server.dom0freemem }} MB</td>
+    {% endif %}
+    <td>{{ ("now"|date("U") - server.updated)|date("H") }} hours ago</td>
+    </tr>
+    {% endfor %}
+{% endblock %}

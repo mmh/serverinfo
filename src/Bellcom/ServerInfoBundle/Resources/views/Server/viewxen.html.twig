@@ -1,0 +1,66 @@
+{% extends "BellcomServerInfoBundle::layout.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+          <script src="{{ asset('bundles/bellcomserverinfo/js/viewxen.js') }}" type="text/javascript"></script>
+{% endblock %}
+{% block title "Bellcom - Xen Servers" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1>Xen Servers</h1>
+    <div>
+    {% for server in servers %}
+    <table class="highlighttable tablesorter"><thead>
+    <tr>
+    <th class="header name">Name</th>
+    <th class="header intip">IP (internal)</th>
+    <th class="header extip">IP (external)</th>
+    <th class="header memory">Memory</th>
+    <th class="header type">Type</th>
+    <th class="header cpucount">CPU count</th>
+    <th class="header cputype">CPU type</th>
+    <th class="header uptime">Uptime</th>
+    <th class="header">OS</th>
+    <th class="header osrelease">OS Release</th>
+    <th class="header kernel">Kernel</th>
+    <th class="header arch">Arch</th>
+    <th class="header kernelarch">Kernel Arch</th>
+    <th class="header parent">Parent</th>
+    <th class="header">Dom0 mem</th>
+    <th class="header">Last Update</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>{{ server.hostname }}</td>
+    <td>{{ server.intip }}</td>
+    <td>{{ server.extip }}</td>
+    <td>{{ server.memory }}</td>
+    <td>{{ server.isvirtual }}</td>
+    <td>{{ server.cpucount }}</td>
+    <td>{{ server.cpuinfo }}</td>
+    <td>{{ (server.uptime / 60 / 60 / 24) | number_format(1) }} days</td>
+    <td>{{ server.os }}</td>
+    <td>{{ server.osrelease }}</td>
+    <td>{{ server.kernelrelease }}</td>
+    <td>{{ server.arch }}</td>
+    <td>{{ server.kernelarch }}</td>
+    {% if server.parent is empty %}
+    <td>{{ server.isvirtual }}</td>
+    {% else %}
+    <td>{{ server.parent }}</td>
+    {% endif %}
+    {% if server.dom0freemem is empty %}
+    <td>Not set</td>
+    {% else %}
+    <td>{{ server.dom0freemem }} / {{ server.dom0totalmem }}</td>
+    {% endif %}
+    <td>{{ ("now"|date("U") - server.updated)|date("H") }} hours ago</td>
+    </tr>
+    {% render "BellcomServerInfoBundle:Server:domUTable" with {'dom0name': server.hostname} %}
+    </tbody>
+    </table>
+    {% endfor %}
+    </div>
+{% endblock %}
